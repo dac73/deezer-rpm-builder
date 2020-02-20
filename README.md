@@ -42,7 +42,7 @@ See [Releases](https://github.com/dac73/deezer-rpm-builder/releases)
 4. Download the latest Deezer Windows or macOS installer, as `deezer.exe` or `deezer.dmg` respectively, e.g. using wget:
 
    ```sh
-   wget 'https://e-cdn-content.dzcdn.net/builds/deezer-desktop/8cF2rAuKxLcU1oMDmCYm8Uiqe19Ql0HTySLssdzLkQ9ZWHuDTp2JBtQOvdrFzWPA/darwin/x64/4.18.30/DeezerDesktop_4.18.30.dmg' -O deezer.dmg
+   wget 'https://www.deezer.com/desktop/download?platform=win32&architecture=x86' -O deezer.exe
    ```
 
 # Build

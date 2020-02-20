@@ -1,17 +1,15 @@
 #!/bin/bash
 set -e
 
-ELECTRON_VERSION=6.1.7
-DEEZER_VERSION=4.18.30
-DEEZER_BINARY=deezer.exe
-DEEZER_DMG=deezer.dmg
+# Get latest exe version
+DEEZER_LATEST=$(curl -sLI "https://www.deezer.com/desktop/download?platform=win32&architecture=x86" | grep 'https://www.deezer.com/desktop/download/artifact/win32/x86' | awk -F '/' '{print $NF}')
 
-if [[ $1 != windows && $1 != mac ]]; then
-  echo Please specify whether you would like to build a DEB package using \
-    Windows or macOS sources
-  echo Example: ./build.sh windows
-  exit 1
-fi
+echo "Latest version is $DEEZER_LATEST"
+exit
+
+ELECTRON_VERSION=6.1.7
+DEEZER_VERSION=${DEEZER_LATEST}
+DEEZER_BINARY=deezer.exe
 
 # Check for Deezer Windows installer
 if [ "$1" == windows ] && ! [ -f $DEEZER_BINARY ]; then
