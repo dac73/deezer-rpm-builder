@@ -4,7 +4,7 @@ Build Deezer packages for Opensuse/Fedora, using resources extracted from Deezer
 
 ## Prebuilt packages
 
-See [Releases]   (TODO)
+See [Releases](https://github.com/dac73/deezer-rpm-builder/releases)
 
 ## Requirements
 
