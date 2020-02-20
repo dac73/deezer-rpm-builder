@@ -20,7 +20,7 @@ See [Releases](TODO)
    npm install asar electron-packager electron-installer-redhat
    ```
 
-2.1 Add `node_modules` to path
+2.1. Add `node_modules` to path
    ```sh
    export PATH="$PATH:$(npm bin)"
    ```
