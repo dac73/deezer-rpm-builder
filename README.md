@@ -1,10 +1,10 @@
-# Deezer DEB Builder
+# Deezer RPM Builder
 
-Build Deezer packages for Ubuntu/Debian, using resources extracted from Deezer's Windows or macOS packages.
+Build Deezer packages for Opensuse/Fedora, using resources extracted from Deezer's Windows or macOS packages.
 
 ## Prebuilt packages
 
-See [Releases](https://github.com/davidbailey00/deezer-deb-builder/releases)
+See [Releases](TODO)
 
 ## Requirements
 
@@ -14,18 +14,23 @@ See [Releases](https://github.com/davidbailey00/deezer-deb-builder/releases)
    nvm install node
    ```
 
-2. Install `asar`, `electron-packager` and `electron-installer-debian`:
+2. Install `asar`, `electron-packager` and `electron-installer-redhat`:
 
    ```sh
-   npm -g install asar electron-packager electron-installer-debian
+   npm install asar electron-packager electron-installer-redhat
    ```
 
-3. Install packages required for `7z`, `icns2png`, `fakeroot` and `dpkg`.
+2.1 Add `node_modules` to path
+   ```sh
+   export PATH="$PATH:$(npm bin)"
+   ```
 
-   Using Ubuntu or Debian:
+3. Install packages required for `7z`, `icns2png`, `fakeroot` and `rpm`.
+
+   Using OpenSUSE
 
    ```sh
-   sudo apt install p7zip-full icnsutils fakeroot
+   sudo zypper in p7zip-full icns-utils fakeroot rpm-build
    ```
 
    Or, using macOS:
@@ -50,4 +55,4 @@ Run the build script:
 
 replacing `<platform>` with either `windows` or `mac`, depending on which sources you would like to build from.
 
-Once complete, you should have a DEB package in the `out` directory.
+Once complete, you should have a RPM package in the `out` directory.

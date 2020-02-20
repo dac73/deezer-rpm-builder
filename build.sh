@@ -2,7 +2,7 @@
 set -e
 
 ELECTRON_VERSION=6.1.7
-DEEZER_VERSION=4.18.40
+DEEZER_VERSION=4.18.30
 DEEZER_BINARY=deezer.exe
 DEEZER_DMG=deezer.dmg
 
@@ -40,8 +40,8 @@ check-command() {
 }
 
 commands=(
-  node npm asar electron-packager electron-installer-debian
-  7z icns2png fakeroot dpkg
+  node npm asar electron-packager electron-installer-redhat
+  7z icns2png fakeroot rpm
 )
 
 for command in "${commands[@]}"; do
@@ -127,7 +127,7 @@ if ! [ -f build/dist/app-linux-x64/resources/linux/systray.png ]; then
 fi
 
 # Create Debian package
-electron-installer-debian \
+electron-installer-redhat \
   --src build/dist/app-linux-x64 \
   --dest out \
   --arch amd64 \
